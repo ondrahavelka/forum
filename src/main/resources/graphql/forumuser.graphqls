@@ -1,0 +1,21 @@
+type User {
+id: ID!,
+username: String,
+email: String,
+posts: [Post!]!
+}
+
+type Post {
+id: ID!,
+title: String
+}
+
+type RestApiErrorResponse{
+signature: String,
+errorText: String
+}
+
+# return user with his posts
+type Query {
+extractUser(userId: String): User
+}
